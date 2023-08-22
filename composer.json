@@ -1,12 +1,16 @@
 {
-    "name": "blade-organization/blade-heroicons",
-    "description": "A package to easily make use of Heroicons in your Laravel Blade views.",
-    "keywords": ["Blade", "Heroicons", "Laravel"],
-    "homepage": "https://github.com/blade-organization/blade-heroicons",
+    "name": "anodyne/blade-mage-icons",
+    "description": "A package to easily make use of Mage Icons in your Laravel Blade views.",
+    "keywords": [
+        "Blade",
+        "Mage Icons",
+        "Laravel"
+    ],
+    "homepage": "https://github.com/anodyne/blade-mage-icons",
     "license": "MIT",
     "authors": [
         {
-            "name": "Blade Developer"
+            "name": "Anodyne Productions"
         }
     ],
     "require": {
@@ -15,12 +19,26 @@
         "illuminate/support": "^9.0|^10.0"
     },
     "require-dev": {
+        "mage-icons/mage-icons": "0.0.6-beta",
         "orchestra/testbench": "^7.0|^8.0",
         "phpunit/phpunit": "^9.0"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "mage-icons/mage-icons",
+                "version": "0.0.6-beta",
+                "dist": {
+                    "url": "https://github.com/Mage-Icons/mage-icons/archive/refs/tags/0.0.6-beta.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "BladeUI\\Heroicons\\": "src"
+            "Anodyne\\MageIcons\\": "src"
         }
     },
     "autoload-dev": {
@@ -28,10 +46,16 @@
             "Tests\\": "tests"
         }
     },
+    "scripts": {
+        "update-icons": [
+            "./bin/compile.sh ./vendor/mage-icons/mage-icons/svg"
+        ],
+        "test": "vendor/bin/phpunit --colors=always"
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "BladeUI\\Heroicons\\BladeHeroiconsServiceProvider"
+                "Anodyne\\MageIcons\\BladeMageIconsServiceProvider"
             ]
         }
     },

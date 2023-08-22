@@ -15,27 +15,30 @@ final class BladeHeroiconsServiceProvider extends ServiceProvider
         $this->registerConfig();
 
         $this->callAfterResolving(Factory::class, function (Factory $factory, Container $container) {
-            $config = $container->make('config')->get('blade-heroicons', []);
+            $config = $container->make('config')->get('blade-mage-icons', []);
 
-            $factory->add('heroicons', array_merge(['path' => __DIR__.'/../resources/svg'], $config));
+            $factory->add('mage-icons', array_merge([
+                'path' => __DIR__.'/../resources/svg',
+                'prefix' => 'mage'
+            ], $config));
         });
     }
 
     private function registerConfig(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/blade-heroicons.php', 'blade-heroicons');
+        $this->mergeConfigFrom(__DIR__.'/../config/blade-mage-icons.php', 'blade-mage-icons');
     }
 
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../resources/svg' => public_path('vendor/blade-heroicons'),
-            ], 'blade-heroicons');
+                __DIR__.'/../resources/svg' => public_path('vendor/blade-mage-icons'),
+            ], 'blade-mage-icons');
 
             $this->publishes([
-                __DIR__.'/../config/blade-heroicons.php' => $this->app->configPath('blade-heroicons.php'),
-            ], 'blade-heroicons-config');
+                __DIR__.'/../config/blade-mage-icons.php' => $this->app->configPath('blade-mage-icons.php'),
+            ], 'blade-mage-icons-config');
         }
     }
 }

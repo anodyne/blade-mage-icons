@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests;
 
-use BladeUI\MageIcons\BladeMageIconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
+use BladeUI\MageIcons\BladeMageIconsServiceProvider;
 use Orchestra\Testbench\TestCase;
 
 class CompilesIconsTest extends TestCase

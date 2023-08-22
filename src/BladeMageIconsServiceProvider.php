@@ -19,7 +19,7 @@ final class BladeHeroiconsServiceProvider extends ServiceProvider
 
             $factory->add('mage-icons', array_merge([
                 'path' => __DIR__.'/../resources/svg',
-                'prefix' => 'mage'
+                'prefix' => 'mage',
             ], $config));
         });
     }

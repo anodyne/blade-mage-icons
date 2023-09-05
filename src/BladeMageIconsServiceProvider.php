@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace BladeUI\Heroicons;
+namespace Anodyne\MageIcons;
 
 use BladeUI\Icons\Factory;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
-final class BladeHeroiconsServiceProvider extends ServiceProvider
+final class BladeMageIconsServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

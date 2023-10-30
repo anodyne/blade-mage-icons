@@ -19,7 +19,7 @@
         "illuminate/support": "^9.0|^10.0"
     },
     "require-dev": {
-        "mage-icons/mage-icons": "0.0.6-beta",
+        "mage-icons/mage-icons": "0.7.0-beta",
         "orchestra/testbench": "^7.0|^8.0",
         "phpunit/phpunit": "^9.0"
     },
@@ -28,9 +28,9 @@
             "type": "package",
             "package": {
                 "name": "mage-icons/mage-icons",
-                "version": "0.0.6-beta",
+                "version": "0.7.0-beta",
                 "dist": {
-                    "url": "https://github.com/Mage-Icons/mage-icons/archive/refs/tags/0.0.6-beta.zip",
+                    "url": "https://github.com/Mage-Icons/mage-icons/archive/refs/tags/0.7.0-beta.zip",
                     "type": "zip"
                 }
             }
